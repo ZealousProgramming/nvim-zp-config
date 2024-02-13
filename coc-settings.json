@@ -1,0 +1,22 @@
+{
+	"languageserver": {
+		"odin": {
+			"command": "ols",
+			"filetypes": [
+				"odin"
+			],
+			"rootPatterns": [
+				"ols.json"
+			]
+		}
+	},
+	"coc.preferences.formatOnSave": true,
+	"diagnostic.checkCurrentLine": true,
+	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextCurrentLineOnly": false,
+	"diagnostic.refreshOnInsertMode": false,
+	"diagnotic.messageTarget": "echo",
+	"suggerst.enableFloat": false,
+	"signature.target": "echo",
+	"hover.target": "echo"
+}
