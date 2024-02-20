@@ -1,43 +1,55 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } )
-	use {'neoclide/coc.nvim', branch = 'release'}
-	use 'neovim/nvim-lspconfig'
-	use 'nvim-tree/nvim-web-devicons'
-	use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- use {'neoclide/coc.nvim', branch = 'release'}
+    use 'neovim/nvim-lspconfig'
+    use 'nvim-tree/nvim-web-devicons'
+    use {"ray-x/lsp_signature.nvim"}
+    use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 
-	-- Extras
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional
-		},
-	}
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'}, -- Required
+            { -- Optional
+                'williamboman/mason.nvim',
+                run = function() pcall(vim.cmd, 'MasonUpdate') end
+            }, {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'}, -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'} -- Required
+        }
+    }
 
-	-- Langs
-	use {'tetralux/odin.vim'}
+    -- Extras
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons' -- optional
+        }
+    }
 
-	-- Themes
-	use({ 'ghifarit53/tokyonight-vim' })
-	use({ 'rose-pine/neovim', as = 'rose-pine' })
-	use({ 'alessandroyorba/despacio' })
-	use {
-		'baliestri/aura-theme',
-		rtp = 'packages/neovim',
-		as = 'aura-dark',
-		--config = function()
-			--vim.cmd("colorscheme aura-dark") -- Or any Aura theme available
-		--end
-	}
-	use {'nyoom-engineering/oxocarbon.nvim'}
+    -- Langs
+    use {'tetralux/odin.vim'}
+
+    -- Themes
+    use({'ZealousProgramming/ghoul'})
+    use({'ghifarit53/tokyonight-vim'})
+    use({'rose-pine/neovim', as = 'rose-pine'})
+    use({'alessandroyorba/despacio'})
+    use {'nyoom-engineering/oxocarbon.nvim'}
 
 end)

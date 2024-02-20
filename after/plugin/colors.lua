@@ -6,6 +6,7 @@ require("rose-pine").setup({
 function SetupColor(color, hide_background)
 		-- color = color or "despacio"
 		color = color or "ghoul"
+		-- color = color or "cottoncandy"
 		hide_background = hide_background or false
 
 
