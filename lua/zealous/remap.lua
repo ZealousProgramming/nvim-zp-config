@@ -3,7 +3,10 @@ local nr_opt = {noremap = true, silent = true}
 
 vim.g.mapleader = " "
 
+-- disable wrapping
+vim.wo.wrap = false
 vim.api.nvim_command("set nu")
+vim.api.nvim_command("set nonumber")
 vim.api.nvim_command("set tabstop=4 softtabstop=4")
 
 map("n", "<leader>hl", ":nohl<CR>", opts)
@@ -69,6 +72,7 @@ map("n", "<C-PageUp>", ":BufferMoveNext<CR>", opts)
 map("n", "<leader>tt", ":NvimTreeToggle<CR>", opts)
 
 -- Themes
+map("n", "<leader>ghoul", ":lua SetupColor(\"ghoul\", true)<CR>", opts)
 map("n", "<leader>des", ":lua SetupColor(\"despacio\")<CR>", opts)
 map("n", "<leader>rose", ":lua SetupColor(\"rose-pine\", true)<CR>", opts)
 map("n", "<leader>dark", ":lua SetupColor(\"dark-aura\")<CR>", opts)

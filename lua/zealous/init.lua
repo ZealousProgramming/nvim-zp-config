@@ -18,8 +18,6 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- disable wrapping
-vim.wo.wrap = false
 
 -- empty setup using defaults
 require("nvim-tree").setup()

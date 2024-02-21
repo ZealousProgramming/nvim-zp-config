@@ -25,5 +25,5 @@ end
 -- end
 
 -- SetupColorGlobals()	
-SetupColor()
+SetupColor("ghoul", true)
 
